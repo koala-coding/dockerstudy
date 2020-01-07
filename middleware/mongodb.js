@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const db = 'mongodb://129.28.178.139:27017/test'
+const db = 'mongodb://129.28.xxx.xxx:27017/test'
 const fs = require('fs')
 const path = require('path')
 /**
