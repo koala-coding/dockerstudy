@@ -1,5 +1,6 @@
 'use strict'
 const router = require('koa-router')()
+const User = require('../models/user')
 // 用于封装controllers的公共方法
 
 var mongoose = require('mongoose')
@@ -7,7 +8,6 @@ var uuid = require('uuid')
 
 router.get('/', async (ctx, next) => {
   // 向mongodb中添加一条数据
-  const User = mongoose.model('User')
   const user = await User.findOne({
 	  phoneNumber: '16677771234'
 	}).exec()
