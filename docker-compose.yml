@@ -1,0 +1,14 @@
+version: '2' 
+services: 
+  webapp: 
+    build: . 
+    image: webapp:dockerstudy 
+    volumes: 
+      - ./:/usr/src/nodejs 
+    #depends_on: 
+      #- mongo 
+    ports: 
+      - 3000:3000 
+    container_name: dockerstudycontainer 
+  #mongo: 
+    #image: "mongo:latest" 

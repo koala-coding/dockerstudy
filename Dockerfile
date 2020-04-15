@@ -8,9 +8,9 @@ RUN mkdir -p /usr/src/nodejs/
 WORKDIR /usr/src/nodejs/
 
 # RUN/COPY是分层的，package.json 提前，只要没修改就不会重新安装包
-COPY package.json /usr/src/nodejs/package.json
+COPY package.json yarn.lock /usr/src/nodejs/
 RUN cd /usr/src/nodejs/
-RUN npm i --registry=http://registry.npm.taobao.org
+RUN yarn install && yarn cache clean
 
 # 把当前目录下所有的文件拷贝到 Image 的 /usr/src/nodejs/目录下
 COPY . /usr/src/nodejs/
